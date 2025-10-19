@@ -1,0 +1,25 @@
+<h1>Fish List for enthusiasts</h1>   <a [routerLink]="['/']"><button class="btn btn-primary">Home</button></a><br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">*</th>
+      <th scope="col">Tunisian Name</th>
+      <th scope="col">Habitat</th>
+      <th scope="col">KG Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (fish of fishL; track fish.id){
+    <tr>
+      <th scope="row">{{fish.id}}</th>
+      <td>{{fish.tunisian_name}}</td>
+       <td>{{fish.habitat}}</td>
+       <td>{{fish.kg_price}}</td>
+       <td><img [src]="DisplayImage(fish.id)" style="width:220px; height:90px; object-fit:cover;" alt="fish image"></td>
+    </tr>
+}
+</tbody>
+
+
+
