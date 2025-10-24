@@ -1,6 +1,50 @@
-<h1>This is Webapp for Fishing&Fishes Enthuiasts</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center fw-bold text-primary" [routerLink]="['/']">
+      <img 
+        src="favicon.jpg" 
+        alt="Logo" 
+        width="40" 
+        height="40" 
+        class="d-inline-block align-text-top rounded-circle border border-dark me-2 shadow-sm"
+        style="object-fit: cover;"
+      >
+      <span class="fs-4 fw-bold" style="color: #1E3A8A; letter-spacing: 1px;">F&F</span>
+
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" [routerLink]="['/fish/List']">FishList</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" [routerLink]="['/auth']">Login</a>
+        </li>
+      </ul>
+
+        <input style="width:215px;" class="form-control me-2" [(ngModel)]="inp_val" type="search" placeholder="Search" aria-label="Search" (keyup.enter)='Search(inp_val)'>
+        <button class="btn btn-outline-success" type="button" (click)='Search(inp_val)'>Search</button>
+        
+    </div>
+  </div>
+</nav>
+
+
+
+<!--<h1 style="color:white;text-align: center;margin-top:12px;" class="fw-bold mb-4 text-center">Fishing&Fishes Enthuiasts</h1>
 
 <ul>
-    <li><a [routerLink]="['/fish/List']"><button class="btn btn-primary">Available Fish</button></a></li><br>
-    <li><a [routerLink]="['/fish/Info']"><button class="btn btn-primary">Learn Info</button></a></li>
+    <li><a [routerLink]="['/fish/List']"><button class="btn btn-primary shadow rounded-pill px-3 py-2">Available Fish</button></a></li><br>
+    <li><a [routerLink]="['/fish/Info']"><button class="btn btn-primary shadow rounded-pill px-3 py-2">Learn Info</button></a></li><br>
+    <li><a [routerLink]="['/auth']"><button class="btn btn-primary shadow rounded-pill px-3 py-2">Login</button></a></li>
 </ul>
+-->

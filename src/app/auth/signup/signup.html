@@ -1,0 +1,37 @@
+<body class="bg-dark bg-gradient text-white">
+
+  <a [routerLink]="['/']" class="position-fixed top-0 end-0 m-3">
+    <button class="btn btn-light shadow rounded-pill px-3 py-2">
+      Home
+    </button>
+  </a>
+
+  <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <h1 class="fw-bold mb-4 text-center">SIGN UP</h1>
+
+    <form class="border rounded-3 p-4" style="width: 400px; background: rgba(0, 0, 0, 0.5);">
+      <div class="mb-3">
+        <label for="login_signup" class="form-label">Login</label>
+        <input id="login_signup" class="form-control form-control-sm" type="text" name="Login_signup" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password_signup" class="form-label">Password (minimum 8 characters)</label>
+        <input id="password_signup" class="form-control form-control-sm" type="password" name="Password_signup" minlength="8" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email_signup" class="form-label">Email</label>
+        <input id="email_signup" class="form-control form-control-sm" type="email" name="Email_signup" required>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary shadow rounded-pill px-3 py-2">Validate</button>
+        <a class="btn btn-light shadow rounded-pill px-3 py-2" [routerLink]="['/auth']">Login Page</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+    
