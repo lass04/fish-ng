@@ -5,11 +5,11 @@ import { AuthRoutingModule } from '../auth/auth-routing-module';
 import { FishUnity } from '../fish/fish-list/fish-unity';
 import { fishList } from '../fish/fish-list/fishlist-load';
 import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [FishRoutingModule,RouterModule,AuthRoutingModule,FormsModule],
+  imports: [FishRoutingModule,RouterModule,AuthRoutingModule,FormsModule,CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

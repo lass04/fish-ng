@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm rounded">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center fw-bold text-primary" [routerLink]="['/']">
       <img 
@@ -39,12 +39,20 @@
 </nav>
 
 
+<h1 class="center">Available Fish</h1>
 
-<!--<h1 style="color:white;text-align: center;margin-top:12px;" class="fw-bold mb-4 text-center">Fishing&Fishes Enthuiasts</h1>
-
-<ul>
-    <li><a [routerLink]="['/fish/List']"><button class="btn btn-primary shadow rounded-pill px-3 py-2">Available Fish</button></a></li><br>
-    <li><a [routerLink]="['/fish/Info']"><button class="btn btn-primary shadow rounded-pill px-3 py-2">Learn Info</button></a></li><br>
-    <li><a [routerLink]="['/auth']"><button class="btn btn-primary shadow rounded-pill px-3 py-2">Login</button></a></li>
-</ul>
--->
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let fish of fishL" class="col">
+      <div class="card h-100">
+        <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}">
+        <div class="card-body">
+          <h5 class="card-title" style="color:black;text-align: center ;font-family: 'Courier New', Courier, monospace;">{{fish.tunisian_name}}</h5>
+          <p class="card-text" style="color:black;text-align: center ;"> <strong style="font-weight: bold;">Nom Latin : </strong>{{fish.latin_name}}</p>
+          <p class="card-text" style="color:black;text-align: center ;"><strong style="font-weight: bold;">Habitat : </strong>{{fish.habitat}}</p>
+          <p class="card-text" style="color:black;text-align: center ;"><strong style="font-weight: bold;">Prix : </strong>{{fish.kg_price}} Dt/Kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
