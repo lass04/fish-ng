@@ -40,4 +40,11 @@ export class Home {
       this.found= {id:0,habitat:"",tunisian_name:"",latin_name:"",kg_price:0,picture:""};
   }
 }
+  foundH: string = "";
+
+   onClick(id:number){
+    this.foundH = this.fishL.find(ele => ele.id==id)?.tunisian_name || "";
+    if(this.foundH!="")
+    alert("Ça c'est le poisson "+this.foundH); 
+   }
 }

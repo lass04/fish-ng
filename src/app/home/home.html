@@ -45,9 +45,9 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let fish of fishL" class="col">
       <div class="card h-100">
-        <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}">
+        <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}" (click)="onClick(fish.id)">
         <div class="card-body">
-          <h5 class="card-title" style="color:black;text-align: center ;font-family: 'Courier New', Courier, monospace;">{{fish.tunisian_name}}</h5>
+          <h5 class="card-title" style="color:black;text-align: center ;font-family: 'Courier New', Courier, monospace;" >{{fish.tunisian_name}}</h5>
           <p class="card-text" style="color:black;text-align: center ;"> <strong style="font-weight: bold;">Nom Latin : </strong>{{fish.latin_name}}</p>
           <p class="card-text" style="color:black;text-align: center ;"><strong style="font-weight: bold;">Habitat : </strong>{{fish.habitat}}</p>
           <p class="card-text" style="color:black;text-align: center ;"><strong style="font-weight: bold;">Prix : </strong>{{fish.kg_price}} Dt/Kg</p>
