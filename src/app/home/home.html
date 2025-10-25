@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm rounded">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center fw-bold text-primary" [routerLink]="['/']">
+    <a class="navbar-brand d-flex align-items-center fw-bold text-primary">
       <img 
         src="favicon.jpg" 
         alt="Logo" 
@@ -9,7 +11,7 @@
         class="d-inline-block align-text-top rounded-circle border border-dark me-2 shadow-sm"
         style="object-fit: cover;"
       >
-      <span class="fs-4 fw-bold" style="color: #1E3A8A; letter-spacing: 1px;">F&F</span>
+      <span class="fs-4 fw-bold" style="color: #1E3A8A; letter-spacing: 1px;font-family: Cambria;">FRECHK</span>
 
     </a>
 
@@ -21,13 +23,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active fw-bold" aria-current="page" [routerLink]="['/']">Home</a>
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active fw-bold" aria-current="page" [routerLink]="['/fish/List']">FishList</a>
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/fish/List']">FishList</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active fw-bold" aria-current="page" [routerLink]="['/auth']">Login</a>
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/auth']">Login</a>
         </li>
       </ul>
 
@@ -38,21 +40,48 @@
   </div>
 </nav>
 
-
-<h1 class="center">Available Fish</h1>
+<h1 class="text-center " style="color:#1E3A8A;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Available Fish</h1>
 
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let fish of fishL" class="col">
-      <div class="card h-100">
+      <div class="card h-100 rounded rounded-3" FishCardBorder>
         <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}" (click)="onClick(fish.id)">
-        <div class="card-body">
-          <h5 class="card-title" style="color:black;text-align: center ;font-family: 'Courier New', Courier, monospace;" >{{fish.tunisian_name}}</h5>
-          <p class="card-text" style="color:black;text-align: center ;"> <strong style="font-weight: bold;">Nom Latin : </strong>{{fish.latin_name}}</p>
-          <p class="card-text" style="color:black;text-align: center ;"><strong style="font-weight: bold;">Habitat : </strong>{{fish.habitat}}</p>
-          <p class="card-text" style="color:black;text-align: center ;"><strong style="font-weight: bold;">Prix : </strong>{{fish.kg_price}} Dt/Kg</p>
+        <div class="card-body text-center bg-light">
+          <h5 class="card-title text-black text-center font-monospace">{{fish.tunisian_name}}</h5>
+          <p class="card-text text-black text-center">
+            <strong>Nom Latin : </strong>{{fish.latin_name}}
+          </p>
+          <p class="card-text text-black text-center">
+            <strong>Habitat : </strong>{{fish.habitat}}
+          </p>
+          <p class="card-text text-black text-center">
+            <strong>Prix : </strong>{{fish.piece_price}}
+          </p>
+          <button class="btn btn-primary">Ajouter Au panier</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!--<h1 class="center">Available Fish</h1>
+
+
+<div class="container">
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let fish of fishL" class="col">
+      <div class="card h-100 rounded rounded-3" FishCardBorder>
+        <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}" (click)="onClick(fish.id)">
+        <div class="card-body text-center bg-black">
+          <h5 class="card-title" style="color:white;text-align: center ;font-family: 'Courier New', Courier, monospace;" >{{fish.tunisian_name}}</h5>
+          <p class="card-text" style="color:white;text-align: center ;"> <strong style="font-weight: bold;">Nom Latin : </strong>{{fish.latin_name}}</p>
+          <p class="card-text" style="color:white;text-align: center ;"><strong style="font-weight: bold;">Habitat : </strong>{{fish.habitat}}</p>
+          <p class="card-text" style="color:white;text-align: center ;"><strong style="font-weight: bold;">Prix : </strong>{{fish.piece_price}}</p>
+          <button class="btn btn-primary ">Ajouter Au panier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->

@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h1 class="text-center text-white fst-italic mb-4">Fish List for Enthusiasts</h1>
+  <h1 class="text-center text-white fst-italic mb-4" style="color:#1E3A8A;font-family: Cambria;">Fish List for Enthusiasts</h1>
 
   <a [routerLink]="['/']" class="position-fixed top-0 end-0 m-3">
     <button class="btn btn-light shadow rounded-pill px-3 py-2">
@@ -23,7 +23,7 @@
           <th scope="row" class="text-center text-white">{{ fish.id }}</th>
           <td class="text-white">{{ fish.tunisian_name }}</td>
           <td class="text-white">{{ fish.habitat }}</td>
-          <td class="text-white">{{ fish.kg_price }}</td>
+          <td class="text-white">{{ fish.piece_price }}</td>
           <td class="text-center">
             <img
               [src]="DisplayImage(fish.id)"
