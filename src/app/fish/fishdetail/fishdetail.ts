@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { fishList } from '../fish/fish-list/fishlist-load';
-import { FishUnity } from '../fish/fish-list/fish-unity';
-
+import { fishList } from '../fish-list/fishlist-load';
+import { FishUnity } from '../fish-list/fish-unity';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-fishdetail',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './fishdetail.html',
   styleUrl: './fishdetail.css'
 })

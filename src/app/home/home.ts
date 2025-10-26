@@ -6,7 +6,7 @@ import { FishUnity } from '../fish/fish-list/fish-unity';
 import { fishList } from '../fish/fish-list/fishlist-load';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FishCardBorder } from '../fish-card-border';
+import { FishCardBorder } from '../fish/fish-card-border';
 import { Router } from '@angular/router';
 
 @Component({
