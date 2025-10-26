@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { fishList } from '../fish-list/fishlist-load';
-import { FishUnity } from '../fish-list/fish-unity';
+import { fishList } from '../fishlist-load';
+import { FishUnity } from '../fish-unity';
 import { RouterModule } from '@angular/router';
+import { GetFishSvc } from '../get-fish-svc';
+
 
 @Component({
   selector: 'app-fishdetail',
@@ -15,13 +17,13 @@ export class Fishdetail implements OnInit {
   FList = fishList;
   fish : FishUnity|undefined;
 
-   constructor(private route: ActivatedRoute){}
+   constructor(private route: ActivatedRoute,private fishSvc : GetFishSvc){}
 
   ngOnInit(): void {
    const id : string | null = this.route.snapshot.paramMap.get('id');
   
   if(id!=null){
-    this.fish = this.FList.find(ele => ele.id === +id);
+    this.fish = this.fishSvc.getFishById(+id);
    }
   }
 

@@ -2,19 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FishRoutingModule } from './fish-routing-module';
-import { FishList } from './fish-list/fish-list';
-import { Info } from './info/info';
+import { FishCardBorder } from './fish-card-border';
 
 
 
 @NgModule({
   declarations: [
-    FishList,
-    Info,
   ],
   imports: [
     CommonModule,
-    FishRoutingModule
+    FishRoutingModule,
   ]
 })
 export class FishModule { }
