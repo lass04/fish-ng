@@ -7,6 +7,7 @@ import { fishList } from '../fish/fish-list/fishlist-load';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FishCardBorder } from '../fish-card-border';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,8 @@ import { FishCardBorder } from '../fish-card-border';
   styleUrl: './home.css'
 })
 export class Home {
+
+  constructor(private router : Router){}
 
   inp_val="";
   fishL : FishUnity[] = fishList;
@@ -41,11 +44,9 @@ export class Home {
       this.found= {id:0,habitat:"",tunisian_name:"",latin_name:"",piece_price:"0",picture:""};
   }
 }
-  foundH: string = "";
+ 
 
-   onClick(id:number){
-    this.foundH = this.fishL.find(ele => ele.id==id)?.tunisian_name || "";
-    if(this.foundH!="")
-    alert("Ça c'est le poisson "+this.foundH); 
+   goToFish(id:number){
+     this.router.navigate(['/fishdetail',id]);
    }
 }

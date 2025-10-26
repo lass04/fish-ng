@@ -1,0 +1,36 @@
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-body p-3">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-6">
+          <table class="table table-bordered table-dark table-striped rounded rounded-3 mb-0" style="max-width: 450px;">
+            <thead>
+              <tr>
+                <th scope="col">Tunisian Name : </th>
+                <th>{{fish?.tunisian_name}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"> Latin Name : </th>
+                <td>{{fish?.latin_name}}</td>
+              </tr>
+              <tr>
+                <th scope="row"> Habitat : </th>
+                <td>{{fish?.habitat}}</td>
+              </tr>
+              <tr>
+                <th scope="row"> Price : </th>
+                <td>{{fish?.piece_price}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="col-md-6">
+          <img src="{{fish?.picture}}" class="img-fluid rounded rounded-3" alt="Fish Image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
