@@ -16,7 +16,8 @@ import { Login } from './login/login';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    RouterModule
+    RouterModule,
+    
   ]
 })
 export class AuthModule { }

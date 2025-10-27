@@ -1,0 +1,36 @@
+
+<form class="border rounded-3 p-4 " style="width: 400px; background: rgba(0, 0, 0, 0.5);" (ngSubmit)="onSubmit()" #fishAddForm="ngForm">
+      <div class="mb-3">
+        <label class="form-label fw-bold" style="color:#1E3A8A;">Tunisian Name : </label>
+        <input class="form-control form-control-sm" type="text" name="tun_name" required [(ngModel)]="fish[0]" #tun_name="ngModel">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold" style="color:#1E3A8A;">Latin Name : </label>
+        <input class="form-control form-control-sm" type="text" name="lat_name"  required [(ngModel)]="fish[1]" #lat_name="ngModel">
+      </div>
+
+      <div class="mb-3">
+        <label  class="form-label fw-bold" style="color:#1E3A8A;">Image Url: </label>
+        <input  class="form-control form-control-sm" type="text" name="url" required [(ngModel)]="fish[2]" #hab="ngModel">
+      </div>
+
+      <div class="mb-3">
+        <label  class="form-label fw-bold" style="color:#1E3A8A;">Habitat : </label>
+        <input  class="form-control form-control-sm" type="text" name="habitat" required [(ngModel)]="fish[3]" #hab="ngModel">
+      </div>
+
+      <div class="mb-3">
+        <label  class="form-label fw-bold" style="color:#1E3A8A;">Price : </label>
+        <input  class="form-control form-control-sm" type="text" name="price" required [(ngModel)]="fish[4]" #price="ngModel">
+        <br><select [(ngModel)]="piece_unity" #select="ngModel" class="rounded rounded-pill">
+            <option>Price/piece</option>
+            <option>Price/kg</option>
+            <option>Price/100g</option>
+        </select>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn shadow rounded-pill px-3 py-2" style="background-color:#1E3A8A;color:white;">Validate</button>
+      </div>
+    </form>

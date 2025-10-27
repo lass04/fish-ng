@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { NotFound } from './not-found/not-found';
 import { Home } from './fish_module/home/home';
-
+import { FishModule } from './fish_module/fish-module';
 
 export const routes: Routes = [
     {path:"auth",loadChildren: () => import('./auth_module/auth-module').then(m => m.AuthModule)},

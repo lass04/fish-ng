@@ -5,6 +5,7 @@ import { FishUnity } from './fish-unity';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GetFishSvc {
      FishL = fishList;
 
@@ -18,6 +19,10 @@ export class GetFishSvc {
 
      getFishByTName(name :string):FishUnity | undefined{
       return this.FishL.find(ele=>ele.tunisian_name.toLowerCase()==name.toLowerCase());
+     }
+
+     addFish(fish:FishUnity){
+         this.FishL.push(fish);
      }
 
 }
