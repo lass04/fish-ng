@@ -25,4 +25,8 @@ export class GetFishSvc {
          this.FishL.push(fish);
      }
 
+     removeFish(fish:FishUnity){
+        this.FishL=this.FishL.filter(ele=>ele.id!=fish.id);
+     }
+
 }
