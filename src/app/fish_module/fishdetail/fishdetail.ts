@@ -1,7 +1,6 @@
 import { FishUnity } from './../fish-unity';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { fishList } from '../fishlist-load';
 import { GetFishSvc } from '../get-fish-svc';
 
 
@@ -22,6 +21,10 @@ export class Fishdetail implements OnInit {
   if(id!=null){
     this.fish = this.fishSvc.getFishById(+id);
    }
+   
+
   }
+
+
 
 }

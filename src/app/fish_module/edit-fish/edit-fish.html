@@ -5,7 +5,7 @@
   </a>
 
 <div class="d-flex justify-content-center mt-3 mb-3">
-<form class="border rounded-3 p-4 " style="width: 400px; background: rgba(0, 0, 0, 0.5);" (ngSubmit)="onSubmit()" #fishAddForm="ngForm">
+<form *ngIf="fish" class="border rounded-3 p-4 " style="width: 400px; background: rgba(0, 0, 0, 0.5);" (ngSubmit)="onSubmit()" #fishAddForm="ngForm">
       <div class="mb-3">
         <label class="form-label fw-bold" style="color:#1E3A8A;">Tunisian Name : </label>
         <input class="form-control form-control-sm" type="text" pattern="^[a-zA-Zéçàè]+(?: [a-zA-Zéçàè]+)*$" name="tun_name" required [(ngModel)]="fish.tunisian_name" #tun_name="ngModel">
@@ -19,14 +19,6 @@
         <input class="form-control form-control-sm" type="text" name="lat_name"  pattern="^[a-zA-Zéçàè]+(?: [a-zA-Zéçàè]+)*$" required [(ngModel)]="fish.latin_name" #lat_name="ngModel">
       </div>
       <div [hidden]="lat_name.valid || lat_name.pristine" class="rounded text-center" style="background-color:#A94442;color:white;">
-          Ce champs est requis
-      </div>
-
-      <div class="mb-3">
-        <label  class="form-label fw-bold" style="color:#1E3A8A;">Image Url: </label>
-        <input  class="form-control form-control-sm" type="text" pattern="^https://[a-zA-Z./]*$"name="url" required [(ngModel)]="fish.picture" #url="ngModel">
-      </div>
-      <div [hidden]="url.valid || url.pristine" class="rounded text-center" style="background-color:#A94442;color:white;font-weight:bold;">
           Ce champs est requis
       </div>
 
@@ -65,3 +57,4 @@
       </div>
     </form>
     </div>
+

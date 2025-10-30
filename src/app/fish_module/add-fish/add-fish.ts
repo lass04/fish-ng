@@ -11,27 +11,22 @@ import { Router } from '@angular/router';
 })
 export class AddFish implements OnInit{
   
-  @Input() fish:string[]=[];
+  @Input() fish!:FishUnity;
   piece_unity="";
-  fishres:FishUnity={id:0,tunisian_name:"",latin_name:"",habitat:"",piece_price:"",picture:""};
-  fishL:FishUnity[]=[];
 
   constructor(private fishSvc : GetFishSvc,private route : Router){}
   ngOnInit(): void {
-    this.fish[4]="DT";
-    this.fishL=this.fishSvc.getFishList();
+    this.fish.piece_price="DT";
   }
 
   onSubmit(){
-    this.fishres.id=this.fishL.length+1;
-    this.fishres.tunisian_name=this.fish[0];
-    this.fishres.latin_name=this.fish[1];
-    this.fishres.habitat=this.fish[3];
-    this.fishres.piece_price=this.fish[4]+'/'+this.piece_unity;
-    this.fishres.picture=this.fish[2];
-    
-    this.fishSvc.addFish(this.fishres);
+
+    if(!this.fishSvc.addFish(this.fish)){
+      this.route.navigate(['/fish_module/addfish']);
+    }else{
+    this.fishSvc.addFish(this.fish);
     this.route.navigate(['/']);
-  }
+        }}        
+
 
 }

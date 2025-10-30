@@ -10,7 +10,7 @@ export class GetFishSvc {
      FishL = fishList;
 
      getFishList() : FishUnity[]{
-        return this.FishL;
+        return [...this.FishL];
      }
      
      getFishById(id:number) : FishUnity | undefined{
@@ -21,12 +21,25 @@ export class GetFishSvc {
       return this.FishL.find(ele=>ele.tunisian_name.toLowerCase()==name.toLowerCase());
      }
 
-     addFish(fish:FishUnity){
-         this.FishL.push(fish);
+     addFish(fish:FishUnity):boolean{
+         if(this.getFishByTName(fish.tunisian_name)!=undefined){
+         return false;
+      }
+         else {
+            this.FishL.push(fish);
+            return true;
+         }
      }
 
      removeFish(fish:FishUnity){
         this.FishL=this.FishL.filter(ele=>ele.id!=fish.id);
      }
+
+     updateFish(fishupd: FishUnity) {
+      this.FishL = this.FishL.map(fish =>
+         fish.id === fishupd.id ? { ...fish, ...fishupd } : fish
+  );
+}
+
 
 }

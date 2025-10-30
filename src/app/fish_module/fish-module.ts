@@ -7,13 +7,15 @@ import { FishCardBorder } from './fish-card-border';
 import { AddFish } from './add-fish/add-fish';
 import { Fishdetail } from './fishdetail/fishdetail';
 import { Home } from './home/home';
+import { EditFish } from './edit-fish/edit-fish';
 
 @NgModule({
   declarations: [
     AddFish,
     Fishdetail,
     Home,
-    FishCardBorder
+    FishCardBorder,
+    EditFish
   ],
   imports: [
     CommonModule,

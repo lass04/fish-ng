@@ -25,12 +25,10 @@ export class Home implements OnInit {
      this.router.navigate(['/fish_module/fishdetail',id]);
    }
    
-   id:number|undefined=-1;
-
    Search(name:string){
-    this.id =this.fishsvc.getFishByTName(name)?.id;
-    if(this.id!=undefined){
-      this.router.navigate(['/fish_module/fishdetail/',this.id]);
+    const id:number | undefined=this.fishsvc.getFishByTName(name)?.id;
+    if(id!=undefined){
+      this.router.navigate(['/fish_module/fishdetail/',id]);
    }else{
     this.router.navigate(['/not_found']);
    }
@@ -38,5 +36,9 @@ export class Home implements OnInit {
 
   goToAdd(){
     this.router.navigate(['/fish_module/addfish']);
+  }
+
+  goToEdit(id:number){
+    this.router.navigate(['/fish_module/editfish',id]);
   }
 }
