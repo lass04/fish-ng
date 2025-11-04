@@ -3,7 +3,8 @@ export interface FishUnity {
     tunisian_name : string;
     latin_name : string;
     habitat : string;
-    piece_price : string;
+    price : string;
+    unity : string;
     picture : string;
 }
 

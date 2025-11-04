@@ -1,8 +1,7 @@
+import { GetFishSvc } from './../get-fish-svc';
 import { FishUnity } from './../fish-unity';
 import { Component, OnInit } from '@angular/core';
-import { FishCardBorder } from '../fish-card-border';
 import { Router } from '@angular/router';
-import { GetFishSvc } from '../get-fish-svc';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +13,10 @@ export class Home implements OnInit {
 
    inp_val="";
    fishL : FishUnity[]=[];
-  constructor(private router : Router,private fishsvc : GetFishSvc){}
+  constructor(private router : Router,private fishSvc : GetFishSvc){}
 
   ngOnInit(): void {
-    this.fishL = this.fishsvc.getFishList();
-    
+    this.fishSvc.getFishList().subscribe((data)=>this.fishL=data);
   }
 
    goToFish(id:number){
@@ -26,13 +24,15 @@ export class Home implements OnInit {
    }
    
    Search(name:string){
-    const id:number | undefined=this.fishsvc.getFishByTName(name)?.id;
-    if(id!=undefined){
-      this.router.navigate(['/fish_module/fishdetail/',id]);
-   }else{
-    this.router.navigate(['/not_found']);
-   }
-}
+
+    this.fishSvc.getFishByTName(name).subscribe(
+      (data) => this.router.navigate([`/fishdetail/${data[0].id}`]),
+    (err) =>{
+      alert('Cannot find '+name);
+      this.inp_val="";
+    })
+
+    }
 
   goToAdd(){
     this.router.navigate(['/fish_module/addfish']);
@@ -41,4 +41,5 @@ export class Home implements OnInit {
   goToEdit(id:number){
     this.router.navigate(['/fish_module/editfish',id]);
   }
+
 }

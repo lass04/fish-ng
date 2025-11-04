@@ -32,13 +32,13 @@
 
       <div class="mb-3">
         <label  class="form-label fw-bold" style="color:#1E3A8A;">Price : </label>
-        <input  class="form-control form-control-sm" type="text" name="price" required [(ngModel)]="fish.piece_price" #price="ngModel">
+        <input  class="form-control form-control-sm" type="text" name="price" required [(ngModel)]="fish.price" #price="ngModel">
         <div [hidden]="price.valid || price.pristine" class="rounded text-center" style="background-color:#A94442;color:white;">
           Ce champs est requis
       </div>
         <br>
         <label  class="form-label fw-bold" style="color:#1E3A8A;">Price Unity : </label>
-        <select [(ngModel)]="piece_unity" #select="ngModel" name="select" class="rounded rounded-pill form-select" required>
+        <select [(ngModel)]="fish.unity" #select="ngModel" name="select" class="rounded rounded-pill form-select" required>
             <option value="Piece" >Piece</option>
             <option value="Kg">Kg</option>
             <option value="100g">100g</option>

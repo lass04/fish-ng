@@ -1,45 +1,41 @@
 import { Injectable } from '@angular/core';
 import { fishList } from './fishlist-load';
 import { FishUnity } from './fish-unity';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class GetFishSvc {
-     FishL = fishList;
 
-     getFishList() : FishUnity[]{
-        return [...this.FishL];
+   constructor(private http: HttpClient){}
+   
+
+     getFishList() : Observable<FishUnity[]>{
+        return this.http.get<FishUnity[]>('api/fishL');
      }
      
-     getFishById(id:number) : FishUnity | undefined{
-      return this.FishL.find(ele=>ele.id===id);
+     getFishById(id:number) : Observable<FishUnity>{
+      return this.http.get<FishUnity>(`api/fishL/${id}`);
      }
 
-     getFishByTName(name :string):FishUnity | undefined{
-      return this.FishL.find(ele=>ele.tunisian_name.toLowerCase()==name.toLowerCase());
+     getFishByTName(name :string): Observable<FishUnity[]>{
+      return this.http.get<FishUnity[]>(`api/fisL/?tunisian_name=${name}`);
      }
 
-     addFish(fish:FishUnity):boolean{
-         if(this.getFishByTName(fish.tunisian_name)!=undefined){
-         return false;
-      }
-         else {
-            this.FishL.push(fish);
-            return true;
-         }
+     addFish(fish:FishUnity):Observable<FishUnity>{
+         return this.http.post<FishUnity>('api/fishL',fish); 
      }
 
-     removeFish(fish:FishUnity){
-        this.FishL=this.FishL.filter(ele=>ele.id!=fish.id);
+     removeFish(fish:FishUnity):Observable<any>{
+        return this.http.delete<FishUnity>(`api/fishL/${fish.id}`);
      }
 
-     updateFish(fishupd: FishUnity) {
-      this.FishL = this.FishL.map(fish =>
-         fish.id === fishupd.id ? { ...fish, ...fishupd } : fish
-  );
-}
+     updateFish(fishupd: FishUnity) : Observable<any>{
+        return this.http.put<FishUnity>(`api/fishL/${fishupd.id}`,fishupd); 
+     }
 
 
 }
