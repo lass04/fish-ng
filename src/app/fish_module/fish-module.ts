@@ -8,6 +8,8 @@ import { AddFish } from './add-fish/add-fish';
 import { Fishdetail } from './fishdetail/fishdetail';
 import { Home } from './home/home';
 import { EditFish } from './edit-fish/edit-fish';
+import { EditButtonBorder } from "./edit-button-border";
+import { SearchFish } from './search-fish/search-fish';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { EditFish } from './edit-fish/edit-fish';
     Fishdetail,
     Home,
     FishCardBorder,
-    EditFish
+    EditFish,
+    SearchFish
   ],
   imports: [
     CommonModule,
     FormsModule,
-    FishRoutingModule
-  ]
+    FishRoutingModule,
+    EditButtonBorder
+]
 })
 export class FishModule { }

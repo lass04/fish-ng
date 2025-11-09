@@ -33,8 +33,7 @@
         </li>
       </ul>
 
-        <input style="width:215px;" class="form-control me-2" [(ngModel)]="inp_val" type="search" placeholder="Search" aria-label="Search" (keyup.enter)='Search(inp_val)'>
-        <button class="btn " style="background-color:#1E3A8A;color:white;" type="button" (click)='Search(inp_val)'>Search</button>
+        <button class="btn " style="background-color:#1E3A8A;color:white;" type="button" (click)="goToSearch()">Search</button>
         
     </div>
   </div>
@@ -46,7 +45,8 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let fish of fishL" class="col">
-      <div class="card h-100 rounded rounded-3" FishCardBorder (click)="goToFish(fish.id)">
+      <div class="card h-100 rounded rounded-3" (click)="goToFish(fish.id)" FishCardBorder>
+        
         <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}">
         <div class="card-body text-center bg-light">
           <h5 class="card-title text-black text-center font-monospace">{{fish.tunisian_name}}</h5>
@@ -59,13 +59,14 @@
           <p class="card-text text-black text-center">
             <strong>Prix : </strong>{{fish.price}}/{{fish.unity}}
           </p>
-          <button class="btn mb-2" style="background-color: #1E3A8A;">Ajouter Au panier</button>
-          <button class="btn " style="background-color: #1E3A8A;" (click)="goToEdit(fish.id)">Editer</button>
+  
+        </div>
+          <button class="btn mb-2" style="background-color: #1E3A8A;" appEditButtonBorder>Ajouter Au panier</button>
+          <button class="btn " style="background-color: #1E3A8A;" (click)="goToEdit(fish.id)" appEditButtonBorder>Editer</button>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 <!--<h1 class="center">Available Fish</h1>
 

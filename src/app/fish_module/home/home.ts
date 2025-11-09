@@ -23,15 +23,8 @@ export class Home implements OnInit {
      this.router.navigate(['/fish_module/fishdetail',id]);
    }
    
-   Search(name:string){
-
-    this.fishSvc.getFishByTName(name).subscribe(
-      (data) => this.router.navigate([`/fishdetail/${data[0].id}`]),
-    (err) =>{
-      alert('Cannot find '+name);
-      this.inp_val="";
-    })
-
+   goToSearch(){
+    this.router.navigate(['/fish_module/searchfish']);
     }
 
   goToAdd(){

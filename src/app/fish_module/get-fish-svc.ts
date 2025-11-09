@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { fishList } from './fishlist-load';
 import { FishUnity } from './fish-unity';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -26,7 +26,10 @@ export class GetFishSvc {
      }
 
      addFish(fish:FishUnity):Observable<FishUnity>{
-         return this.http.post<FishUnity>('api/fishL',fish); 
+         const httpOption = {
+            headers : new HttpHeaders({'Content-Type':"application/json"})
+         }
+         return this.http.post<FishUnity>('api/fishL',fish,httpOption); 
      }
 
      removeFish(fish:FishUnity):Observable<any>{
@@ -36,6 +39,10 @@ export class GetFishSvc {
      updateFish(fishupd: FishUnity) : Observable<any>{
         return this.http.put<FishUnity>(`api/fishL/${fishupd.id}`,fishupd); 
      }
+
+     getFishByKeyword(keyw : string): Observable<FishUnity[]>{
+        return this.http.get<FishUnity[]>(`api/fishL/?tunisian_name=${keyw}`);
+     } 
 
 
 }

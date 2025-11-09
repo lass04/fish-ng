@@ -30,7 +30,10 @@ export class EditFish implements OnInit{
 
     if(this.fish)
      this.fishSvc.updateFish(this.fish).subscribe(
-      () => this.router.navigate(['/']));
+      () => {
+        alert(`Updated ${this.fish?.tunisian_name}`);
+        this.router.navigate(['/'])  
+      });
      }
 
 

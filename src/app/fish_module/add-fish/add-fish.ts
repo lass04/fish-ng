@@ -12,10 +12,11 @@ import { Router } from '@angular/router';
 
 export class AddFish implements OnInit{
   
-  @Input() fish!:FishUnity;
+  fish!:FishUnity;
   piece_unity="";
 
-  constructor(private fishSvc : GetFishSvc,private router : Router){}
+  constructor(private fishSvc : GetFishSvc,private router : Router){
+  }
   ngOnInit(): void {
     this.fish.price="DT";
   }
