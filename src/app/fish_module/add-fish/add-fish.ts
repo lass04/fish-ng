@@ -15,14 +15,14 @@ export class AddFish implements OnInit{
   fish!:FishUnity;
   piece_unity="";
 
-  constructor(private fishSvc : GetFishSvc,private router : Router){
-  }
+  constructor(private fishSvc : GetFishSvc,private router : Router){}
+
   ngOnInit(): void {
     this.fish.price="DT";
   }
 
   onSubmit(){
-
+    this.router.navigate(['/']);
     this.fishSvc.addFish(this.fish).subscribe(
       ()=> this.router.navigate(['/']),
       (err)=>this.router.navigate(['/fish_module/addfish']));
