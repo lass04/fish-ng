@@ -28,9 +28,18 @@
         <li class="nav-item">
           <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/fish/List']">FishList</a>
         </li>
+        @if (!Logged) {
         <li class="nav-item">
           <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" [routerLink]="['/auth']">Login</a>
+        </li>}
+        @else {
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;" (click)="logout()">Logout</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-bold" aria-current="page" style="font-family: Cambria;font-size: large;color:green" >Connected</a>
+        </li>
+        }
       </ul>
 
         <button class="btn " style="background-color:#1E3A8A;color:white;" type="button" (click)="goToSearch()">Search</button>
@@ -41,6 +50,7 @@
 
 <h1 class="text-center " style="color:#1E3A8A;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Available Fish</h1>
 
+<button style="color:white;background-color: #1E3A8A;margin-left: 5px;" class="btn" [routerLink]="['/fish/buylist']">Fishes : {{Buys}}</button>
 <button style="color:white;background-color: #1E3A8A;margin-left: 5px;" class="btn" (click)="goToAdd()">+ Add Fish</button>
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -61,30 +71,9 @@
           </p>
   
         </div>
-          <button class="btn mb-2 rounded" style="background-color: #1E3A8A;" appEditButtonBorder>Ajouter Au panier</button>
+          <button class="btn mb-2 rounded" style="background-color: #1E3A8A;" appEditButtonBorder (click)="AddToBuy(fish)">Ajouter Au panier</button>
           <button class="btn rounded" style="background-color: #1E3A8A;" (click)="goToEdit(fish.id)" appEditButtonBorder>Editer</button>
         </div>
       </div>
     </div>
   </div>
-
-<!--<h1 class="center">Available Fish</h1>
-
-
-<div class="container">
-  
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div *ngFor="let fish of fishL" class="col">
-      <div class="card h-100 rounded rounded-3" FishCardBorder>
-        <img [src]="fish.picture" class="card-img-top" alt="{{fish.tunisian_name}}" (click)="onClick(fish.id)">
-        <div class="card-body text-center bg-black">
-          <h5 class="card-title" style="color:white;text-align: center ;font-family: 'Courier New', Courier, monospace;" >{{fish.tunisian_name}}</h5>
-          <p class="card-text" style="color:white;text-align: center ;"> <strong style="font-weight: bold;">Nom Latin : </strong>{{fish.latin_name}}</p>
-          <p class="card-text" style="color:white;text-align: center ;"><strong style="font-weight: bold;">Habitat : </strong>{{fish.habitat}}</p>
-          <p class="card-text" style="color:white;text-align: center ;"><strong style="font-weight: bold;">Prix : </strong>{{fish.piece_price}}</p>
-          <button class="btn btn-primary ">Ajouter Au panier</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>-->

@@ -19,7 +19,7 @@ export class Login implements OnInit {
     this.authSvc.login(this.credentials[0],this.credentials[1]).subscribe(
       (isLoggedIn)=>{
         if(isLoggedIn) this.router.navigate(['/']);
-        else this.router.navigate(['/auth_module']);
+        else this.router.navigate(['/auth']);
       }
     )
   }

@@ -1,0 +1,14 @@
+<table class="table striped">
+  <tr><th>Fish</th>
+  <th>Quantity</th></tr>
+
+  @for (buy of AssociativeList | keyvalue; track buy) {
+   <tr> 
+    <td>{{buy.key}}</td>
+    <td>{{buy.value}}</td>
+    </tr>
+   <!-- <tr>
+        <th>Total : {{total}}</th>
+    </tr>-->
+  }
+</table>

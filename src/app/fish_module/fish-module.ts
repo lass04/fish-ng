@@ -10,6 +10,7 @@ import { Home } from './home/home';
 import { EditFish } from './edit-fish/edit-fish';
 import { EditButtonBorder } from "./edit-button-border";
 import { SearchFish } from './search-fish/search-fish';
+import { BuyList } from './buy-list/buy-list';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchFish } from './search-fish/search-fish';
     Home,
     FishCardBorder,
     EditFish,
-    SearchFish
+    SearchFish,
+    BuyList
   ],
   imports: [
     CommonModule,

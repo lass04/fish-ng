@@ -6,6 +6,7 @@ import { Signup } from './signup/signup';
 
 import { RouterModule } from '@angular/router';
 import { Login } from './login/login';
+import { authGuardGuard } from '../auth-guard';
 
 
 @NgModule({

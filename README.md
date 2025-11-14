@@ -1,3 +1,9 @@
+This Project is a first trial with Angular, It includes 2 modules,3 Services,
+Directives, Guard.
+
+The code still needs correction and improvements 
+
+
 # NgProject
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.

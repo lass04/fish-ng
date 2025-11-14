@@ -30,7 +30,7 @@ export class SearchFish implements OnInit{
   }
 
   goToDetail(fish:FishUnity){
-     this.router.navigate([`/fish_module/fishdetail/${fish.id}`]);
+     this.router.navigate([`/fish/fishdetail/${fish.id}`]);
   }
     
 }

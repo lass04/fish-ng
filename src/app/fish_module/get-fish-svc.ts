@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { fishList } from './fishlist-load';
 import { FishUnity } from './fish-unity';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
